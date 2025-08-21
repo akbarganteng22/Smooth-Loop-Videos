@@ -1,0 +1,11 @@
+streamlit
+moviepy==2.2.1
+numpy
+Pillow
+imageio
+imageio-ffmpeg
+decorator
+proglog
+python-dotenv
+tqdm
+colorama
