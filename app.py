@@ -1,6 +1,6 @@
 import streamlit as st
 from moviepy.video.io.VideoFileClip import VideoFileClip
-from moviepy.editor import VideoFileClip, concatenate_videoclips, vfx
+from moviepy.video.compositing.concatenate import concatenate_videoclips
 from moviepy.video.fx.all import time_mirror
 import tempfile
 import os
@@ -123,3 +123,4 @@ if process:
             except: pass
             try: os.remove(input_path)
             except: pass
+
