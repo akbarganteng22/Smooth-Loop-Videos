@@ -5,10 +5,10 @@ from moviepy.video.fx import all as vfx
 import tempfile
 import os
 
-# Page config
+# ---------------- Page config ----------------
 st.set_page_config(page_title="Video Looper", page_icon="🎬", layout="centered")
 
-# Dark theme CSS
+# ---------------- Dark theme CSS ----------------
 dark_css = """
 <style>
 .stApp { background-color: #0f1117; color: #f0f0f0; }
@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6, .stMarkdown { color: #ffffff !important; }
 """
 st.markdown(dark_css, unsafe_allow_html=True)
 
-# Splash screen
+# ---------------- Splash screen ----------------
 splash_html = """
 <style>
 #splash-container {
@@ -44,12 +44,12 @@ splash_html = """
 """
 st.markdown(splash_html, unsafe_allow_html=True)
 
-# Sidebar
+# ---------------- Sidebar ----------------
 st.sidebar.image("logo.png", use_container_width=True)
 st.sidebar.title("🎬 Video Looping App")
 
-# Main UI
-st.title("✨ Video Looping Tool")
+# ---------------- Main UI ----------------
+st.title("✨ Video Looper Tool")
 
 uploaded_file = st.file_uploader("Upload video", type=["mp4", "mov", "mkv", "avi"])
 
@@ -60,7 +60,6 @@ with col2:
     res_option = st.selectbox("Output resolution", ["480p", "720p", "1080p"])
 
 duration = st.number_input("Target duration (detik)", min_value=5, max_value=600, value=20, step=5)
-
 process = st.button("🚀 Generate")
 
 def resize_to_option(clip, res_option: str):
